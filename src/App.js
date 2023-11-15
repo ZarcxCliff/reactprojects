@@ -7,6 +7,9 @@ import Product from "./Pages/Product";
 import Cart from "./Pages/Cart";
 import LoginSignUp from "./Pages/LoginSignUp";
 import Footer from "./Components/Footer/Footer";
+import men_banner from "./Components/Assets/banner_mens.png";
+import women_banner from "./Components/Assets/banner_women.png";
+import kids_banner from "./Components/Assets/banner_kids.png";
 const App = () => {
 	return (
 		<div>
@@ -19,20 +22,34 @@ const App = () => {
 					/>
 					<Route
 						path="/men"
-						            element={<ShopCategory category="men" />}
+						element={
+							<ShopCategory
+								banner={men_banner}
+								category="men"
+							/>
+						}
 					/>
 					<Route
 						path="/women"
-						element={<ShopCategory category="women" />}
+						element={
+							<ShopCategory
+								banner={women_banner}
+								category="women"
+							/>
+						}
 					/>
 					<Route
 						path="/kids"
-						element={<ShopCategory category="kids" />}
+						element={
+							<ShopCategory
+								banner={kids_banner}
+								category="kid"
+							/>
+						}
 					/>
 					<Route
 						path="/product"
-						element={<Product />}
-					>
+						element={<Product />}>
 						<Route
 							path=":productId"
 							element={<Product />}
@@ -47,7 +64,7 @@ const App = () => {
 						element={<LoginSignUp />}
 					/>
 				</Routes>
-				<Footer/>
+				<Footer />
 			</BrowserRouter>
 		</div>
 	);
